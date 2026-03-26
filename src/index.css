@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    --neon: 160 84% 39%;
+    --neon-glow: 0 0 30px rgba(16, 185, 129, 0.4);
+    --neon-glow-strong: 0 0 60px rgba(16, 185, 129, 0.6);
+    --surface: 0 0% 100% / 0.03;
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background-color: #050505;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .neon-text {
+    color: hsl(var(--neon));
+    text-shadow: var(--neon-glow);
+  }
+
+  .neon-text-strong {
+    /* color: hsl(var(--neon)); */
+    text-shadow: var(--neon-glow-strong);
+  }
+
+  .glass {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--glass-border));
+  }
+
+  .glass-card {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsla(var(--glass-border));
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .electric-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .electric-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--neon)), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: border-flow 3s linear infinite;
+  }
+
+  .electric-border:hover::before {
+    opacity: 1;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--neon)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: hsl(var(--neon));
+    box-shadow: var(--neon-glow);
+    z-index: 9999;
+    transform-origin: left;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ============================================
+   TECH BACKGROUND
+   ============================================ */
+.tech-grid-dots {
+  background-image: radial-gradient(circle, rgba(16,185,129,0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.tech-grid-lines {
+  background-image:
+    linear-gradient(rgba(16,185,129,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,185,129,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.code-float {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(16, 185, 129, 0.18);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  animation: float-code linear infinite;
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16,185,129,0.3), transparent);
+  animation: scan-down 12s linear infinite;
+}
+
+.orb-primary {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.06) 0%, transparent 70%);
+  top: 5%;
+  left: -15%;
+  animation: orb-drift-1 22s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.orb-secondary {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 70%);
+  bottom: 10%;
+  right: -8%;
+  animation: orb-drift-2 30s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.binary-stream {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.binary-stream-inner {
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  line-height: 1.5;
+  color: rgba(16, 185, 129, 0.12);
+  animation: binary-fall linear infinite;
+  white-space: pre;
+}
+
+/* ============================================
+   SHIMMER / GLITCH TEXT
+   ============================================ */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    hsl(160, 84%, 39%) 0%,
+    rgba(255,255,255,0.9) 40%,
+    hsl(160, 84%, 39%) 60%,
+    hsl(160, 84%, 39%) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.glitch-text::before {
+  color: #34d399;
+  animation: glitch-1 6s infinite;
+}
+
+.glitch-text::after {
+  color: #10b981;
+  animation: glitch-2 6s infinite;
+}
+
+/* ============================================
+   TYPING CURSOR
+   ============================================ */
+.typing-cursor::after {
+  content: '|';
+  display: inline-block;
+  color: hsl(160, 84%, 39%);
+  animation: cursor-blink 0.8s step-end infinite;
+  margin-left: 2px;
+  font-weight: 300;
+}
+
+.typing-cursor-done::after {
+  content: none;
+}
+
+/* ============================================
+   CARD SPOTLIGHT EFFECT
+   ============================================ */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================
+   MARQUEE / TECH TICKER
+   ============================================ */
+.marquee-wrapper {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee-x 28s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 2rem;
+  white-space: nowrap;
+}
+
+/* ============================================
+   NEON BORDER CARD
+   ============================================ */
+.neon-pulse-card {
+  animation: neon-border-pulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   HOVER UNDERLINE SLIDE
+   ============================================ */
+.hover-underline-slide {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline-slide::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: hsl(160, 84%, 39%);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-underline-slide:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   TEXT REVEAL (clip-path)
+   ============================================ */
+.text-clip-reveal {
+  clip-path: inset(0 100% 0 0);
+  animation: text-clip-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ============================================
+   SECTION BACKGROUND ACCENTS
+   ============================================ */
+.section-accent-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at top left, rgba(16,185,129,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.section-accent-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at bottom right, rgba(16,185,129,0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ============================================
+   TERMINAL / CODE BLOCK
+   ============================================ */
+.terminal-block {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+.terminal-header {
+  background: rgba(16, 185, 129, 0.08);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* ============================================
+   CARD 3D TILT
+   ============================================ */
+.card-3d-wrapper {
+  perspective: 1000px;
+}
