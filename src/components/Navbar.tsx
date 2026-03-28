@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const navItems = ['Services', 'About', 'Portfolio', 'Contact'];
+const navItems = ['About', 'Services', 'Portfolio', 'Contact'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

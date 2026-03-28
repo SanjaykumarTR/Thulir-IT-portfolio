@@ -18,7 +18,7 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=680&q=80&fit=crop&crop=center',
   },
   {
-    title: 'RR Jewellery Shop',
+    title: 'JRJ Jewellers',
     sector: 'Retail – Jewellery',
     category: 'Software',
     tag: 'Billing Software',
@@ -169,15 +169,7 @@ export default function Portfolio() {
                     />
 
                     {/* Hover overlay with button */}
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <button
-                        className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono font-bold transition-transform hover:scale-105 active:scale-95"
-                        style={{ background: project.accentSolid, color: '#fff', boxShadow: `0 0 20px ${project.accentSolid}80` }}
-                      >
-                        <ExternalLink size={13} strokeWidth={2} />
-                        View Project
-                      </button>
-                    </div>
+                    {/* View Project button removed */}
 
                     {/* Top accent strip */}
                     <div

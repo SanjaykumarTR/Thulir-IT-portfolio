@@ -147,26 +147,16 @@ export default function Contact() {
 
     const serviceLabel = SERVICE_OPTIONS.find(opt => opt.value === form.subject)?.label || form.subject;
 
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          mobile: form.email,
-          service: serviceLabel,
-          message: form.message,
-        }),
-      });
-
-      if (!res.ok) throw new Error('Network response was not ok');
-      setSubmitted(true);
-    } catch (error) {
-      console.error('Form submission error:', error);
-      alert('Failed to send message. Please try again or contact us directly.');
-    } finally {
-      setLoading(false);
-    }
+    // Create WhatsApp message with form data
+    const whatsappMessage = `*New Contact Form Submission*\n\n*Name:* ${form.name}\n*Mobile:* ${form.email}\n*Service:* ${serviceLabel}\n\n*Message:* ${form.message}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/917094152543?text=${encodedMessage}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+    
+    setSubmitted(true);
+    setLoading(false);
   };
 
   return (

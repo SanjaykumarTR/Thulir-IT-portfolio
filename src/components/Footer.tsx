@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const socials = [
-  { icon: Github, href: 'https://github.com/thulirinfotech-IT-team' },
   { icon: Linkedin, href: '#' },
   { icon: Mail, href: 'mailto:thulirinfotechit@gmail.com' },
 ];
