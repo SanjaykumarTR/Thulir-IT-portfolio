@@ -8,13 +8,13 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative py-20 px-6 border-t border-border">
+    <footer className="relative py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-12"
+          className="grid md:grid-cols-3 gap-8 md:gap-12"
         >
           <div>
             <h3 className="text-2xl font-display font-bold neon-text tracking-tighter mb-4">

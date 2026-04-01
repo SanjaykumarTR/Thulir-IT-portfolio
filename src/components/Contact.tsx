@@ -160,7 +160,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32 px-6 overflow-hidden">
+    <section id="contact" className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden">
       {/* Backgrounds */}
       <div className="section-accent-tl" />
       <div className="section-accent-br" />
@@ -187,7 +187,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* ── Left: Info ── */}
           <div className="lg:col-span-2 flex flex-col gap-5">
             {CONTACT_INFO.map((item, i) => (
@@ -316,7 +316,7 @@ export default function Contact() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit}
-                  className="glass-card rounded-2xl p-8 border border-white/5 space-y-5"
+                  className="glass-card rounded-2xl p-6 sm:p-8 border border-white/5 space-y-5"
                 >
                   <div className="grid sm:grid-cols-2 gap-5">
                     <ContactField

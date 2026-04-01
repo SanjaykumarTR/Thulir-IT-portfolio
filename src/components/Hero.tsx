@@ -116,7 +116,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground tracking-tighter leading-[0.9]"
+          className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground tracking-tighter leading-[0.9]"
         >
           Innovating the Future
           <br />
@@ -136,7 +136,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body font-light leading-relaxed"
+          className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body font-light leading-relaxed"
         >
           Thulir Info Tech delivers enterprise-grade web solutions, software platforms,
           and digital experiences that redefine what's possible.
@@ -147,7 +147,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"
+          className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
         >
           <button
             onClick={() => scrollTo('services')}

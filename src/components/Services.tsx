@@ -14,7 +14,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-32 px-6 overflow-hidden">
+    <section id="services" className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden">
       <div className="tech-grid-lines absolute inset-0 opacity-25 pointer-events-none" />
       <div className="section-accent-tl" />
       <div className="section-accent-br" />

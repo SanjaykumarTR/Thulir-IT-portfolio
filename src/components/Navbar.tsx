@@ -32,12 +32,12 @@ export default function Navbar() {
           <img 
             src="/thulir-logo.png" 
             alt="Thulir Logo" 
-            className="h-10 w-auto object-contain"
+            className="h-8 sm:h-10 w-auto object-contain"
           />
-          <span className="text-2xl font-display font-bold neon-text tracking-tighter">
+          <span className="text-lg sm:text-2xl font-display font-bold neon-text tracking-tighter">
             Thulir
           </span>
-          <span className="text-2xl font-display font-bold text-foreground tracking-tighter">
+          <span className="text-lg sm:text-2xl font-display font-bold text-foreground tracking-tighter">
             Info Tech
           </span>
         </button>

@@ -60,7 +60,7 @@ function Terminal() {
 
 export default function About() {
   return (
-    <section id="about" className="relative py-32 px-6 overflow-hidden">
+    <section id="about" className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden">
       <div className="section-accent-br" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 

@@ -69,7 +69,7 @@ export default function Portfolio() {
   const display = filtered.length < 4 ? [...filtered, ...filtered, ...filtered] : [...filtered, ...filtered];
 
   return (
-    <section id="portfolio" className="relative py-32 px-6 overflow-hidden">
+    <section id="portfolio" className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden">
       <div className="section-accent-tl" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
@@ -128,7 +128,7 @@ export default function Portfolio() {
               {display.map((project, i) => (
                 <div
                   key={`${project.title}-${i}`}
-                  className="group relative flex-shrink-0 w-[340px] rounded-2xl overflow-hidden cursor-pointer"
+                  className="group relative flex-shrink-0 w-[280px] sm:w-[340px] rounded-2xl overflow-hidden cursor-pointer"
                   style={{ background: 'rgba(6,6,6,0.95)', border: '1px solid rgba(255,255,255,0.07)' }}
                 >
                   <CornerBrackets size={10} opacity={0} />
