@@ -3,13 +3,13 @@ import { Globe, Layout, Code2, Monitor, Cpu, Receipt, ShoppingCart } from 'lucid
 import ServiceCard from './ServiceCard';
 
 const services = [
-  { title: 'Landing Pages', description: 'High-converting, blazing-fast landing pages that turn visitors into customers.', icon: Layout },
-  { title: 'Static Websites', description: 'Lightning-speed static sites built with modern JAMstack architecture.', icon: Globe },
-  { title: 'Dynamic Websites', description: 'Interactive, data-driven web applications with real-time capabilities.', icon: Monitor },
-  { title: 'Web Development', description: 'Full-stack development from concept to deployment with cutting-edge frameworks.', icon: Code2 },
-  { title: 'Software Development', description: 'Custom enterprise software solutions engineered for scale and performance.', icon: Cpu },
-  { title: 'Billing Software', description: 'Automated invoicing and billing systems that streamline your revenue ops.', icon: Receipt },
-  { title: 'E-Commerce', description: 'Feature-rich online stores with seamless checkout and inventory management.', icon: ShoppingCart },
+  { title: 'Landing Pages', description: 'High-converting, blazing-fast landing pages that turn visitors into customers.', icon: Layout, serviceValue: 'landing-page' },
+  { title: 'Static Websites', description: 'Lightning-speed static sites built with modern JAMstack architecture.', icon: Globe, serviceValue: 'static-website' },
+  { title: 'Dynamic Websites', description: 'Interactive, data-driven web applications with real-time capabilities.', icon: Monitor, serviceValue: 'dynamic-website' },
+  { title: 'Web Development', description: 'Full-stack development from concept to deployment with cutting-edge frameworks.', icon: Code2, serviceValue: 'web-development' },
+  { title: 'Software Development', description: 'Custom enterprise software solutions engineered for scale and performance.', icon: Cpu, serviceValue: 'software-development' },
+  { title: 'Billing Software', description: 'Automated invoicing and billing systems that streamline your revenue ops.', icon: Receipt, serviceValue: 'billing-software' },
+  { title: 'E-Commerce', description: 'Feature-rich online stores with seamless checkout and inventory management.', icon: ShoppingCart, serviceValue: 'e-commerce' },
 ];
 
 export default function Services() {

@@ -8,9 +8,10 @@ interface ServiceCardProps {
   description: string;
   icon: LucideIcon;
   index: number;
+  serviceValue: string;
 }
 
-export default function ServiceCard({ title, description, icon: Icon, index }: ServiceCardProps) {
+export default function ServiceCard({ title, description, icon: Icon, index, serviceValue }: ServiceCardProps) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [8, -8]), { stiffness: 300, damping: 25 });
@@ -36,6 +37,14 @@ export default function ServiceCard({ title, description, icon: Icon, index }: S
 
   const num = String(index + 1).padStart(2, '0');
 
+  const handleClick = () => {
+    // Store service in localStorage for cross-page persistence
+    localStorage.setItem('selectedService', serviceValue);
+    // Also keep sessionStorage as backup
+    sessionStorage.setItem('selectedService', serviceValue);
+    window.location.hash = 'contact';
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -43,6 +52,8 @@ export default function ServiceCard({ title, description, icon: Icon, index }: S
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       style={{ perspective: 1000 }}
+      onClick={handleClick}
+      className="cursor-pointer"
     >
       <motion.div
         onMouseMove={handleMouseMove}

@@ -136,7 +136,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body font-light leading-relaxed"
+          className="mt-5 sm:mt-8 text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl sm:max-w-2xl mx-auto font-body font-light leading-relaxed px-4 sm:px-0"
         >
           Thulir Info Tech delivers enterprise-grade web solutions, software platforms,
           and digital experiences that redefine what's possible.

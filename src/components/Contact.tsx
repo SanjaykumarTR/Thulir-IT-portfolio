@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, MapPin, Send, ArrowRight, CheckCircle2, MessageCircle, PhoneOutgoing } from 'lucide-react';
 
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string;
@@ -22,12 +22,13 @@ const CONTACT_INFO = [
 const COMPANY_PHONE = '+91 7094152543';
 
 const SERVICE_OPTIONS = [
-  { value: 'landing-page', label: 'Landing Page' },
-  { value: 'static-page', label: 'Static Page' },
-  { value: 'dynamic-page', label: 'Dynamic Page' },
+  { value: 'landing-page', label: 'Landing Pages' },
+  { value: 'static-website', label: 'Static Websites' },
+  { value: 'dynamic-website', label: 'Dynamic Websites' },
+  { value: 'web-development', label: 'Web Development' },
+  { value: 'software-development', label: 'Software Development' },
   { value: 'billing-software', label: 'Billing Software' },
-  { value: 'e-commerce-site', label: 'E-commerce Site' },
-  { value: 'others', label: 'Others' },
+  { value: 'e-commerce', label: 'E-Commerce' },
 ];
 
 const ACTION_CARDS = [
@@ -140,6 +141,22 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const update = (key: string) => (v: string) => setForm((f) => ({ ...f, [key]: v }));
+
+  // Check for selected service from Services page
+  useEffect(() => {
+    const checkStorage = () => {
+      const service = localStorage.getItem('selectedService');
+      
+      if (service) {
+        setForm((f) => ({ ...f, subject: service }));
+        localStorage.removeItem('selectedService');
+      }
+    };
+
+    // Run after a short delay
+    const timer = setTimeout(checkStorage, 150);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
