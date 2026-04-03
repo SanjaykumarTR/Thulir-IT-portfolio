@@ -138,8 +138,9 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-5 sm:mt-8 text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl sm:max-w-2xl mx-auto font-body font-light leading-relaxed px-4 sm:px-0"
         >
-          Thulir Info Tech delivers enterprise-grade web solutions, software platforms,
-          and digital experiences that redefine what's possible.
+          Thulir Info Tech delivers enterprise-grade web solutions,<br className="hidden sm:block" />
+          software platforms, and digital experiences<br className="hidden sm:block" />
+          that redefine what's possible.
         </motion.p>
 
         {/* CTA Buttons */}
